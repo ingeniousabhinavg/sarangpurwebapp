@@ -1,0 +1,20 @@
+*{margin: 0%; padding: 0; box-sizing: border-box;}
+.navbg{
+    background-color: #73BB97;
+}
+.navbar-brand{
+    color: aliceblue;
+}
+.nav-link{
+    color: aliceblue;
+}
+.footerbg{
+    background-color: #2F363D;
+}
+
+ul li a:hover{
+    color: rgb(109, 207, 4);
+}
+.authbg{
+    background-color: antiquewhite;
+}
