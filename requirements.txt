@@ -1,0 +1,4 @@
+Django
+Pillow
+dj_database_url
+django_heroku

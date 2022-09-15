@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}News{% endblock title %}
+{% block news %}
+<section>
+    <nav aria-label="breadcrumb" class="p-0 bg-light border border-light">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">News</li>
+        </ol>
+    </nav>
+    <h1 class="text-center bg-primary text-light p-3 visually-hidden">News</h1>
+    <div class="container-fluid p-2">
+        <div class="row justify-content-center g-2">
+            <div class="col-sm-9">
+                <div class="card p-0">
+                    <div class="card-header">Latest News </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for n in news %}
+                            <li><a href="{{n.file.url}}" target="_blank">{{n.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-header">Archive</div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="/">January</a></li>
+                            <li><a href="/">January</a></li>
+                            <li><a href="/">January</a></li>
+                            <li><a href="/">January</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock news %}

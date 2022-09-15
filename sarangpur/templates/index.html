@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block index %}
+<section>
+    <div class="container-fluid">
+        <!-- carousel slider   -->
+        <div class="row">
+            <div class="card p-0">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    {% for s in slider %}
+                    <div class="carousel-inner">
+                        <div class="carousel-item {% if forloop.counter0 == 0%} active {% endif %}">
+                            <img src="{{s.image.url}}" class="d-block w-100" style="height: 300px;" alt="{{s.altText}}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- carousel slider  -->
+    </div>
+
+    <div class="container-fluid p-2">
+        <div class="row g-2">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex">
+                            <div class="p-2 flex-grow-1"><strong>Latest News</strong></div>
+                            <div class="p-2"><a href="news/" target="_blank"><i
+                                        class="bi bi-box-arrow-up-right"></i></a></div>
+                            <!-- <div class="p-2">Third flex item</div> -->
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for n in news %}
+                            <li><a href="{{n.file.url}}" target="_blank">{{n.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex">
+                            <div class="p-2 flex-grow-1"><strong>Farmers</strong></div>
+                            <div class="p-2"><a href="farmers/" target="_blank"><i
+                                        class="bi bi-box-arrow-up-right"></i></a></div>
+                            <!-- <div class="p-2">Third flex item</div> -->
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center authbg p-4 text-dark">Authorities</h1>
+        </div>
+        <hr>
+        <div class="row g-2">
+            {% for a in authorities %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-header p-2"><img src="{{a.profile_pic.url}}" alt="{{a.altText}}" class="card-img"
+                            height="300px"></div>
+                    <div class="card-body">
+                        <h6 class="text-title">{{ a.name | upper }}</h6>
+                        <p><small>{{a.designation}}</small></p>
+                        <p>{{a.about}}</p>
+                    </div>
+                    <div class="card-footer bg-{% cycle 'primary' 'danger' 'info' 'light' %}"> Sience : {{a.pub_date}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <br>
+        <div class="row">
+            <h1 class="text-center bg-primary p-4 text-light">Famous Places</h1>
+        </div>
+        <hr>
+        <!-- attractions in sarangpur  -->
+        <div class="row g-2">
+            {% for p in places %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-header p-2"><img src="{{ p.image.url }}" alt="{{p.altText}}" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{ p.title }}</h6>
+                        <p>{{ p.about | slice:100 }}</p>
+                    </div>
+                    <div class="card-footer bg-{% cycle 'primary' 'danger' 'info' 'light' %}">{{p.pub_date}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- attractions in sarangpur  -->
+    </div>
+</section>
+{% endblock index %}

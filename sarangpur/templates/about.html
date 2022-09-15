@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+{% block about %}
+<section>
+    <nav aria-label="breadcrumb" class="p-0 bg-light border border-light">
+        <ol class="breadcrumb ">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">About</li>
+        </ol>
+    </nav>
+    <h1 class="text-center bg-primary text-light p-3 visually-hidden">About</h1>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, reiciendis!</h1>
+                        <h6 class="text-muted">Lorem ipsum dolor sit amet.</h6>
+                        <p>{% lorem 5 p random %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="card p-0">
+                <iframe class="card-img"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58107.76788784559!2d85.65334008666106!3d25.73185012251847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed84799997453b%3A0x2317efeee0e12000!2sSarangpur%20East%2C%20Bihar!5e0!3m2!1sen!2sin!4v1663227537657!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock about %}
