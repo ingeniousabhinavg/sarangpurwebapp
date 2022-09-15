@@ -2,7 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from tkinter import CASCADE
+import tkinter as TK
 
 def main():
     """Run administrative tasks."""
