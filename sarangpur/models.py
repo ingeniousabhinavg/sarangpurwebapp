@@ -1,5 +1,3 @@
-from operator import mod
-from turtle import title
 from django.db import models
 from django.contrib.auth.models import User
 
