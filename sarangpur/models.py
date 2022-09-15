@@ -3,6 +3,7 @@ from turtle import title
 from django.db import models
 from django.contrib.auth.models import User
 from tkinter import CASCADE
+import tkinter as TK
 # Create your models here.
 
 class Latestnews(models.Model):
