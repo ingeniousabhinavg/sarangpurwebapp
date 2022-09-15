@@ -1,0 +1,1 @@
+web: gunicorn sarangpurapp.wsgi --log-file -
